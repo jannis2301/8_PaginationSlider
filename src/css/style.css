@@ -1,0 +1,98 @@
+:root {
+  --bg-clr: linear-gradient(180deg, #d52f2d, #731b62);
+  --clr-black: #000;
+  --clr-white: #fff;
+  --backbar-clr: #e3e3e3;
+  --max-width: 1400px;
+  --pointer-width: 1rem;
+  --pointer-height: 2rem;
+  --label-width: 1.4rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  background: var(--bg-clr);
+  color: var(--clr-white);
+  font-family: monospace;
+  font-size: 1.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  position: relative;
+}
+
+button::before {
+  --button-size: 48px;
+  width: var(--button-size);
+  height: var(--button-size);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Pagination {
+  max-width: var(--max-width);
+  width: calc(100% - 14vmin);
+  margin-inline: auto;
+  padding-block: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pagination__slider {
+  width: calc(100% - 14vmax);
+  height: 1px;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  position: relative;
+}
+
+.Pagination__prev,
+.Pagination__next {
+  background: transparent;
+  color: var(--clr-white);
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.Pagination__thumb {
+  width: var(--pointer-width);
+  height: var(--pointer-height);
+  background: var(--clr-white);
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  cursor: pointer;
+}
+
+.Pagination__label {
+  padding: var(--label-width);
+  height: var(--label-width);
+  width: var(--label-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5rem;
+  border-radius: 50%;
+  border: 2px solid var(--clr-white);
+  transform: translateX(-50%);
+}
